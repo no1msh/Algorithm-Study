@@ -16,7 +16,9 @@ object BubbleSort : Sort {
         if (target.size <= 1) return
 
         var sortedIndex = 1
-        while (!checkSorted(target)) {
+        var isSwapped = true
+        while (isSwapped) {
+            isSwapped = false
             for (index in 0..(target.lastIndex - sortedIndex++)) {
                 val nextIndex = (index + 1).coerceAtMost(target.lastIndex)
 
@@ -24,25 +26,9 @@ object BubbleSort : Sort {
                     val temp = target[index]
                     target[index] = target[nextIndex]
                     target[nextIndex] = temp
+                    isSwapped = true
                 }
             }
         }
-    }
-
-    /**
-     * 정렬이 되었는지 확인하는 메서드입니다.
-     *
-     * 배열 전체를 순회하며 확인하므로 시간 복잡도는 O(n)입니다.
-     *
-     * @return: 정렬이 되어있는지 안되었는지 Boolean 값으로 반환
-     **/
-    private fun checkSorted(target: IntArray): Boolean {
-        var previous = target.first()
-
-        target.forEach {
-            if (previous > it) return false
-            previous = it
-        }
-        return true
     }
 }
