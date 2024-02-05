@@ -23,11 +23,15 @@ object SelectionSort : Sort {
                 }
             }
 
-            val temp = target[indexForSort]
-            target[indexForSort] = target[minIndex]
-            target[minIndex] = temp
+            swap(target, indexForSort, minIndex)
 
             indexForSort++
         }
+    }
+
+    private fun swap(target: IntArray, a: Int, b: Int) {
+        val temp = target[a]
+        target[a] = target[b]
+        target[b] = temp
     }
 }
