@@ -1,6 +1,6 @@
 package sort
 
-object BubbleSort : Sort {
+object BubbleSort : ON2Sort {
     /**
      * 버블정렬은 비교 기반 정렬 알고리즘으로 양옆에 위치한 두 값을 비교하면서 크기 순으로 정렬합니다.
      *

@@ -1,6 +1,6 @@
 package sort
 
-object SelectionSort : Sort {
+object SelectionSort : ON2Sort {
     /**
      * 선택정렬은 비교 기반 정렬 알고리즘으로 배열 전체를 돌며 최소값을 찾아 오름차순으로 정렬합니다.
      *

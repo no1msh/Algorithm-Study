@@ -1,6 +1,6 @@
 package sort
 
-object InsertionSort : Sort {
+object InsertionSort : ON2Sort {
     /**
      * 삽입정렬은 비교 기반 정렬 알고리즘으로 배열의 앞에서부터 순회하며 정렬된 부분에
      *
