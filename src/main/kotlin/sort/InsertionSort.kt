@@ -16,17 +16,17 @@ object InsertionSort : ON2Sort {
      **/
     override fun sort(array: IntArray) {
         // 1번 인덱스 부터 시작
-        for (i in 1..array.lastIndex) {
-            val targetNumber = array[i]
+        for (indexForSort in 1..array.lastIndex) {
+            val numberForSort = array[indexForSort] // 정렬을 할 값
 
-            var sortedIndex = i - 1
+            var sortedIndex = indexForSort - 1 // 정렬된 인덱스의 최대 값 == 정렬할 값의 인덱스 - 1
 
-            while (sortedIndex >= 0 && array[sortedIndex] > targetNumber) {
-                array[sortedIndex + 1] = array[sortedIndex]
-                sortedIndex--
+            while (sortedIndex >= 0 && array[sortedIndex] > numberForSort) { // 정렬된 값이 정렬을 할 값보다 크다면
+                array[sortedIndex + 1] = array[sortedIndex] // 정렬된 값을 한칸 뒤로 보낸다.
+                sortedIndex-- // 이전 값도 정렬을 할 값보다 크고 작음을 확인해야하니 정렬된 값 인덱스를 하나 감소한다.
             }
 
-            array[sortedIndex + 1] = targetNumber
+            array[sortedIndex + 1] = numberForSort // 정렬 할 값의 위치를 찾았다면 정렬된 인덱스 바로 뒤에 할당한다.
         }
     }
 }
