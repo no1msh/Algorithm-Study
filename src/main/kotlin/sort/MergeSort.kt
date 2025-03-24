@@ -17,13 +17,13 @@ object MergeSort : ONLogNSort {
      *
      * 안정 정렬입니다.
      **/
-    override fun sort(target: IntArray, startIndex: Int, endIndex: Int) {
+    override fun sort(array: IntArray, startIndex: Int, endIndex: Int) {
         if (startIndex < endIndex) {
             val midIndex = (startIndex + endIndex) / 2
 
-            sort(target, startIndex, midIndex)
-            sort(target, midIndex + 1, endIndex)
-            merge(target, startIndex, midIndex, endIndex)
+            sort(array, startIndex, midIndex)
+            sort(array, midIndex + 1, endIndex)
+            merge(array, startIndex, midIndex, endIndex)
         }
     }
 

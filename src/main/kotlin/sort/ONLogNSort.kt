@@ -1,5 +1,5 @@
 package sort
 
 interface ONLogNSort {
-    fun sort(target: IntArray, startIndex: Int, endIndex: Int)
+    fun sort(array: IntArray, startIndex: Int, endIndex: Int)
 }

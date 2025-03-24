@@ -12,18 +12,18 @@ object SelectionSort : ON2Sort {
      *
      * 최소값을 찾으면 검색하던 인덱스 값을 교환을 하는 방식을 사용하여 불안정 정렬입니다.
      **/
-    override fun sort(target: IntArray) {
+    override fun sort(array: IntArray) {
         var indexForSort = 0
-        while (indexForSort < target.size) {
+        while (indexForSort < array.size) {
             var minIndex = indexForSort
 
-            for (index in indexForSort..target.lastIndex) {
-                if (target[minIndex] > target[index]) {
+            for (index in indexForSort..array.lastIndex) {
+                if (array[minIndex] > array[index]) {
                     minIndex = index
                 }
             }
 
-            swap(target, indexForSort, minIndex)
+            swap(array, indexForSort, minIndex)
 
             indexForSort++
         }

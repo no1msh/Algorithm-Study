@@ -1,5 +1,5 @@
 package sort
 
 interface ON2Sort {
-    fun sort(target: IntArray)
+    fun sort(array: IntArray)
 }

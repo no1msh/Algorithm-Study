@@ -14,19 +14,19 @@ object InsertionSort : ON2Sort {
      *
      * 안정정렬입니다.
      **/
-    override fun sort(target: IntArray) {
+    override fun sort(array: IntArray) {
         // 1번 인덱스 부터 시작
-        for (i in 1..target.lastIndex) {
-            val targetNumber = target[i]
+        for (i in 1..array.lastIndex) {
+            val targetNumber = array[i]
 
-            var j = i - 1
+            var sortedIndex = i - 1
 
-            while (j >= 0 && target[j] > targetNumber) {
-                target[j + 1] = target[j]
-                j--
+            while (sortedIndex >= 0 && array[sortedIndex] > targetNumber) {
+                array[sortedIndex + 1] = array[sortedIndex]
+                sortedIndex--
             }
 
-            target[j + 1] = targetNumber
+            array[sortedIndex + 1] = targetNumber
         }
     }
 }

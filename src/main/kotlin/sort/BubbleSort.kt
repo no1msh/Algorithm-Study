@@ -12,20 +12,20 @@ object BubbleSort : ON2Sort {
      *
      * 다른 정렬 알고리즘에 비해 비교적 느린 편이지만, 별도의 메모리 공간을 필요로 하진 않는다는 장점이 있습니다.
      **/
-    override fun sort(target: IntArray) {
-        if (target.size <= 1) return
+    override fun sort(array: IntArray) {
+        if (array.size <= 1) return
 
         var sortedIndex = 1
         var isSwapped = true
         while (isSwapped) {
             isSwapped = false
-            for (index in 0..(target.lastIndex - sortedIndex++)) {
-                val nextIndex = (index + 1).coerceAtMost(target.lastIndex)
+            for (index in 0..(array.lastIndex - sortedIndex++)) {
+                val nextIndex = (index + 1).coerceAtMost(array.lastIndex)
 
-                if (target[index] > target[nextIndex]) {
-                    val temp = target[index]
-                    target[index] = target[nextIndex]
-                    target[nextIndex] = temp
+                if (array[index] > array[nextIndex]) {
+                    val temp = array[index]
+                    array[index] = array[nextIndex]
+                    array[nextIndex] = temp
                     isSwapped = true
                 }
             }
