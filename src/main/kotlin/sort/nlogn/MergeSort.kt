@@ -1,6 +1,6 @@
-package sort
+package sort.nlogn
 
-object MergeSort : ONLogNSort {
+object MergeSort {
     /**
      * 비교기반 알고리즘인 합병 정렬은 재귀를 사용한 분할 정복을 이용한 정렬입니다.
      *
@@ -17,7 +17,7 @@ object MergeSort : ONLogNSort {
      *
      * 안정 정렬입니다.
      **/
-    override fun sort(array: IntArray, startIndex: Int, endIndex: Int) {
+    fun sort(array: IntArray, startIndex: Int, endIndex: Int) {
         if (startIndex < endIndex) {
             val midIndex = (startIndex + endIndex) / 2
 

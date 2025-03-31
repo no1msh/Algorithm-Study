@@ -1,6 +1,6 @@
-package sort
+package sort.n2
 
-object SelectionSort : ON2Sort {
+object SelectionSort {
     /**
      * 선택정렬은 비교 기반 정렬 알고리즘으로 배열 전체를 돌며 최소값을 찾아 오름차순으로 정렬합니다.
      *
@@ -12,7 +12,7 @@ object SelectionSort : ON2Sort {
      *
      * 최소값을 찾으면 검색하던 인덱스 값을 교환을 하는 방식을 사용하여 불안정 정렬입니다.
      **/
-    override fun sort(array: IntArray) {
+    fun sort(array: IntArray) {
         var indexForSort = 0
         while (indexForSort < array.size) {
             var minIndex = indexForSort

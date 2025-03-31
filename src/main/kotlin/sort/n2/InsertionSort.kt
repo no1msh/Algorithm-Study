@@ -1,6 +1,6 @@
-package sort
+package sort.n2
 
-object InsertionSort : ON2Sort {
+object InsertionSort {
     /**
      * 삽입정렬은 비교 기반 정렬 알고리즘으로 배열의 앞에서부터 순회하며 정렬된 부분에 올바른 값을 삽입합니다.
      *
@@ -14,7 +14,7 @@ object InsertionSort : ON2Sort {
      *
      * 안정정렬입니다.
      **/
-    override fun sort(array: IntArray) {
+    fun sort(array: IntArray) {
         // 1번 인덱스 부터 시작
         for (indexForSort in 1..array.lastIndex) {
             val numberForSort = array[indexForSort] // 정렬을 할 값

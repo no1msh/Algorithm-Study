@@ -1,4 +1,4 @@
-package sort
+package sort.nlogn
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

@@ -1,6 +1,6 @@
-package sort
+package sort.n2
 
-object BubbleSort : ON2Sort {
+object BubbleSort {
     /**
      * 버블정렬은 비교 기반 정렬 알고리즘으로 양옆에 위치한 두 값을 비교하면서 크기 순으로 정렬합니다.
      *
@@ -12,7 +12,7 @@ object BubbleSort : ON2Sort {
      *
      * 다른 정렬 알고리즘에 비해 비교적 느린 편이지만, 별도의 메모리 공간을 필요로 하진 않는다는 장점이 있습니다.
      **/
-    override fun sort(array: IntArray) {
+    fun sort(array: IntArray) {
         if (array.size <= 1) return
 
         var sortedIndex = 1

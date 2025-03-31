@@ -1,6 +1,6 @@
-package sort
+package sort.n2
 
-object ShellSort : ON2Sort {
+object ShellSort {
     /**
      * 삽입정렬 최악의 경우의 단점을 보완한 정렬 알고리즘 입니다.
      *
@@ -12,7 +12,7 @@ object ShellSort : ON2Sort {
      *
      * 불안정 정렬이며, 제자리 정렬입니다.
      * */
-    override fun sort(array: IntArray) {
+    fun sort(array: IntArray) {
         var gap = array.size
 
         while (gap >= 1) {
