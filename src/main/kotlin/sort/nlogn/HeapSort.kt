@@ -10,12 +10,7 @@ object HeapSort {
         buildHeapByInsertion(array)
 
         // 2. 최댓값 삭제와 힙으로 재구성하는 과정을 데이터의 개수만큼 반복
-        var heapSize = array.size
-        for (endIndex in array.lastIndex downTo 1) { // 한번 반복할 때마다 맨 뒤의 값이 정렬됨
-            array.swapElements(endIndex, ROOT_INDEX)
-            heapSize--
-            siftDown(array = array, heapSize = heapSize)
-        }
+        sortByHeap(array)
     }
 
     private fun buildHeapByInsertion(array: IntArray) {
@@ -28,6 +23,19 @@ object HeapSort {
                 currentIndex = parentNodeIndex
                 parentNodeIndex = getParentIndex(currentIndex)
             }
+        }
+    }
+
+    fun getParentIndex(childNodeIndex: Int): Int {
+        return (childNodeIndex - 1) / 2
+    }
+
+    private fun sortByHeap(array: IntArray) {
+        var heapSize = array.size
+        for (endIndex in array.lastIndex downTo 1) { // 한번 반복할 때마다 맨 뒤의 값이 정렬됨
+            array.swapElements(endIndex, ROOT_INDEX)
+            heapSize--
+            siftDown(array = array, heapSize = heapSize)
         }
     }
 
@@ -55,10 +63,6 @@ object HeapSort {
             }
             break
         }
-    }
-
-    fun getParentIndex(childNodeIndex: Int): Int {
-        return (childNodeIndex - 1) / 2
     }
 
     fun getChildIndices(parentNodeIndex: Int): Pair<Int, Int> {
