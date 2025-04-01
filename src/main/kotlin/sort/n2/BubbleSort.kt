@@ -1,5 +1,7 @@
 package sort.n2
 
+import sort.util.swapElements
+
 object BubbleSort {
     /**
      * 버블정렬은 비교 기반 정렬 알고리즘으로 양옆에 위치한 두 값을 비교하면서 크기 순으로 정렬합니다.
@@ -23,9 +25,7 @@ object BubbleSort {
                 val nextIndex = (index + 1).coerceAtMost(array.lastIndex)
 
                 if (array[index] > array[nextIndex]) {
-                    val temp = array[index]
-                    array[index] = array[nextIndex]
-                    array[nextIndex] = temp
+                    array.swapElements(index, nextIndex)
                     isSwapped = true
                 }
             }

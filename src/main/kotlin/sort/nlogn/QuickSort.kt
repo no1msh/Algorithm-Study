@@ -1,5 +1,7 @@
 package sort.nlogn
 
+import sort.util.swapElements
+
 object QuickSort {
     /**
      * 비교 기반 정렬 알고리즘인 퀵 정렬(quick sort)은 합병 정렬과 마찬가지로 분할 정복 알고리즘 입니다.
@@ -41,20 +43,15 @@ object QuickSort {
         for (currentIndex in (startIndex + 1)..endIndex) {
             if (array[currentIndex] < pivotValue) { // 피벗 값보다 작은 값들은
                 if (currentIndex != smallerItemIndex) {
-                    swap(array, currentIndex, smallerItemIndex)
+                    array.swapElements(currentIndex, smallerItemIndex)
                 }
                 smallerItemIndex++
             }
         }
 
         val finalPivotIndex = smallerItemIndex - 1 // 피벗보다 작은 값들의 맨 뒤
-        swap(array, startIndex, finalPivotIndex) // 피벗 값이 있던 자리의 값과 피벗이 정렬된 자리의 값을 바꿈
+        array.swapElements(startIndex, finalPivotIndex) // 피벗 값이 있던 자리의 값과 피벗이 정렬된 자리의 값을 바꿈
         return finalPivotIndex // 반환된 피벗 값을 기준으로 왼쪽 부분배열과 오른쪽 부분배열을 정렬
     }
 
-    private fun swap(array: IntArray, index1: Int, index2: Int) {
-        val temp = array[index1]
-        array[index1] = array[index2]
-        array[index2] = temp
-    }
 }

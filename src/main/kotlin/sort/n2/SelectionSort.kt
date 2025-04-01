@@ -1,5 +1,7 @@
 package sort.n2
 
+import sort.util.swapElements
+
 object SelectionSort {
     /**
      * 선택정렬은 비교 기반 정렬 알고리즘으로 배열 전체를 돌며 최소값을 찾아 오름차순으로 정렬합니다.
@@ -23,15 +25,9 @@ object SelectionSort {
                 }
             }
 
-            swap(array, indexForSort, minIndex)
+            array.swapElements(indexForSort, minIndex)
 
             indexForSort++
         }
-    }
-
-    private fun swap(target: IntArray, a: Int, b: Int) {
-        val temp = target[a]
-        target[a] = target[b]
-        target[b] = temp
     }
 }

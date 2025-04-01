@@ -1,5 +1,7 @@
 package sort.nlogn
 
+import sort.util.swapElements
+
 private const val ROOT_INDEX = 0
 
 object HeapSort {
@@ -10,7 +12,7 @@ object HeapSort {
         // 2. 최댓값 삭제와 힙으로 재구성하는 과정을 데이터의 개수만큼 반복
         var heapSize = array.size
         for (endIndex in array.lastIndex downTo 1) { // 한번 반복할 때마다 맨 뒤의 값이 정렬됨
-            swap(array = array, index1 = endIndex, index2 = ROOT_INDEX)
+            array.swapElements(endIndex, ROOT_INDEX)
             heapSize--
             siftDown(array = array, heapSize = heapSize)
         }
@@ -22,7 +24,7 @@ object HeapSort {
             var parentNodeIndex = getParentIndex(currentIndex)
 
             while (parentNodeIndex >= ROOT_INDEX && array[currentIndex] > array[parentNodeIndex]) {
-                swap(array, currentIndex, parentNodeIndex)
+                array.swapElements(currentIndex, parentNodeIndex)
                 currentIndex = parentNodeIndex
                 parentNodeIndex = getParentIndex(currentIndex)
             }
@@ -47,7 +49,7 @@ object HeapSort {
             }
 
             if (largestValueIndex != currentParentIndex) { // 부모 노드의 값이 자식 노드들과 비교해 제일 큰 값이 아니라면
-                swap(array, largestValueIndex, currentParentIndex) // 제일 큰 값인 자식 노드를 부모 노드의 값과 교체
+                array.swapElements(largestValueIndex, currentParentIndex) // 제일 큰 값인 자식 노드를 부모 노드의 값과 교체
                 currentParentIndex = largestValueIndex // 값을 교체 했으니 부모 노드 재할당
                 continue
             }
@@ -61,11 +63,5 @@ object HeapSort {
 
     fun getChildIndices(parentNodeIndex: Int): Pair<Int, Int> {
         return Pair(parentNodeIndex * 2 + 1, parentNodeIndex * 2 + 2)
-    }
-
-    private fun swap(array: IntArray, index1: Int, index2: Int) {
-        val temp = array[index1]
-        array[index1] = array[index2]
-        array[index2] = temp
     }
 }
